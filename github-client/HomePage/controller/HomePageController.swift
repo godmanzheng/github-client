@@ -15,7 +15,18 @@ class HomePageController: UIViewController, UITableViewDataSource, UITableViewDe
     var displayItems:[Repository] = []
     override func viewDidLoad() {
         super.viewDidLoad()
-        fetchGitHubRepositories()
+        GithubConnector.fetchGitHubRepositories { result in
+            switch result {
+            case .success(let repos):
+                self.repositories = repos
+                self.displayItems = self.repositories
+                DispatchQueue.main.async {
+                    self.tableView.reloadData()
+                }
+            case .failure(let error):
+                print("fetch repositories fail \(error)")
+            }
+        }
     }
     
     //basic function

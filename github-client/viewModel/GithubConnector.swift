@@ -8,6 +8,21 @@
 import Foundation
 
 class GithubConnector {
+    static func fetchGitHubRepositories(completion: @escaping (Result<[Repository], Error>) -> Void) {
+        let url = URL(string: AppConstants.GitHost.repositionUrl)!
+        URLSession.shared.dataTask(with: url) { data, response, error in
+            guard let data = data, error == nil else { return }
+            do {
+                if let repositories = try JSONSerialization.jsonObject(with: data) as? [[String: Any]] {
+                    let repos = repositories.compactMap(Repository.init)
+                    completion(.success(repos))
+                }
+            } catch {
+                print(error)
+            }
+        }.resume()
+    }
+    
     static func getUserAccessToken(code: String, completion: @escaping (Result<String, Error>) -> Void) {
         let url = URL(string: "https://github.com/login/oauth/access_token")!
             var request = URLRequest(url: url)

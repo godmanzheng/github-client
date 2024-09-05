@@ -11,6 +11,9 @@ import SafariServices
 
 class PersonalPageController: UIViewController {
 
+    @IBOutlet weak var logButton: UIButton!
+    @IBOutlet weak var iconImageView: UIImageView!
+    @IBOutlet weak var nameLabel: UILabel!
     var vc: SFSafariViewController? = nil;
     
     override func viewDidLoad() {
@@ -30,14 +33,17 @@ class PersonalPageController: UIViewController {
         if let code = noti.userInfo?["code"] as? String {
             if let safariVC = self.vc {
                 safariVC.dismiss(animated: true);
-                getUserAccessToken(code: code) {result in
+                GithubConnector.getUserAccessToken(code: code) {result in
                     switch result {
                         case .success(let accessToken):
                             print("Access Token: \(accessToken)")
-                        self.getUserInfo(accessToken: accessToken) {result in
+                        GithubConnector.getUserInfo(accessToken: accessToken) {result in
                                 switch result {
                                 case .success(let user):
                                     print("User info: \(user)")
+                                    DispatchQueue.main.async {
+                                        self.updateUI(user: user)
+                                    }
                                 case .failure(let error):
                                     print("Error fetching user info: \(error)")
                             }
@@ -50,64 +56,7 @@ class PersonalPageController: UIViewController {
         }
     }
     
-    func getUserInfo(accessToken:String, completion: @escaping (Result<GitHubUser, Error>) -> Void) {
-        let url = URL(string: "https://api.github.com/user")!
-        var request = URLRequest(url: url)
-        request.setValue("token \(accessToken)", forHTTPHeaderField: "Authorization")
+    func updateUI(user:GitHubUser) {
         
-        let task = URLSession.shared.dataTask(with: request) { data, response, error in
-            if let error = error {
-                completion(.failure(error))
-                return
-            }
-            
-            guard let data = data else {
-                let error = NSError(domain: "GitHubAPI", code: -1, userInfo: [NSLocalizedDescriptionKey: "No data received"])
-                completion(.failure(error))
-                return
-            }
-            
-            do {
-                let user = try JSONDecoder().decode(GitHubUser.self, from: data)
-                completion(.success(user))
-            } catch {
-                completion(.failure(error))
-            }
-        }
-        
-        task.resume()
     }
-    
-    func getUserAccessToken(code: String, completion: @escaping (Result<String, Error>) -> Void) {
-        let url = URL(string: "https://github.com/login/oauth/access_token")!
-            var request = URLRequest(url: url)
-            request.httpMethod = "POST"
-            request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
-            request.setValue("application/json", forHTTPHeaderField: "Accept")
-            
-        let parameters = "client_id=\(AppConstants.GitHost.clientID)&client_secret=\(AppConstants.GitHost.clientSecret)&code=\(code)&redirect_uri=\(AppConstants.GitHost.redirectURI)"
-            request.httpBody = parameters.data(using: .utf8)
-            
-            let task = URLSession.shared.dataTask(with: request) { data, response, error in
-                if let error = error {
-                    completion(.failure(error))
-                    return
-                }
-                
-                guard let data = data else {
-                    let error = NSError(domain: "GitHubAPI", code: -1, userInfo: [NSLocalizedDescriptionKey: "No data received"])
-                    completion(.failure(error))
-                    return
-                }
-                do {
-                           let tokenResponse = try JSONDecoder().decode(AccessTokenResponse.self, from: data)
-                           completion(.success(tokenResponse.access_token))
-                       } catch {
-                           completion(.failure(error))
-                       }
-                   }
-                   
-                   task.resume()
-    }
-
 }

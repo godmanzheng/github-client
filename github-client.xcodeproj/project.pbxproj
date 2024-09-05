@@ -9,13 +9,19 @@
 /* Begin PBXBuildFile section */
 		6E6C90A42C884EBD00B36DA9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6C90A32C884EBD00B36DA9 /* AppDelegate.swift */; };
 		6E6C90A62C884EBD00B36DA9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6C90A52C884EBD00B36DA9 /* SceneDelegate.swift */; };
-		6E6C90A82C884EBD00B36DA9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6C90A72C884EBD00B36DA9 /* ViewController.swift */; };
 		6E6C90AB2C884EBD00B36DA9 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 6E6C90AA2C884EBD00B36DA9 /* Base */; };
 		6E6C90AD2C884EBF00B36DA9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6E6C90AC2C884EBF00B36DA9 /* Assets.xcassets */; };
 		6E6C90B02C884EBF00B36DA9 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 6E6C90AF2C884EBF00B36DA9 /* Base */; };
 		6E6C90BB2C884EC000B36DA9 /* github_clientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6C90BA2C884EC000B36DA9 /* github_clientTests.swift */; };
 		6E6C90C52C884EC000B36DA9 /* github_clientUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6C90C42C884EC000B36DA9 /* github_clientUITests.swift */; };
 		6E6C90C72C884EC000B36DA9 /* github_clientUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6C90C62C884EC000B36DA9 /* github_clientUITestsLaunchTests.swift */; };
+		6E6C90DB2C885C3600B36DA9 /* HomePageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6C90DA2C885C3600B36DA9 /* HomePageController.swift */; };
+		6E6C90E22C8885E100B36DA9 /* CategoryDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6C90E12C8885E100B36DA9 /* CategoryDetailController.swift */; };
+		6E6C90E42C88927800B36DA9 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6C90E32C88927800B36DA9 /* Repository.swift */; };
+		6E6C90E82C889CD500B36DA9 /* PersonalPageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6C90E72C889CD500B36DA9 /* PersonalPageController.swift */; };
+		6E6C90EC2C88B7E300B36DA9 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 6E6C90EB2C88B7E300B36DA9 /* Localizable.xcstrings */; };
+		6E6C90F22C88BE3F00B36DA9 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6C90F12C88BE3F00B36DA9 /* AppConstants.swift */; };
+		6E6C90FD2C88D2C000B36DA9 /* GitUserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6C90FC2C88D2C000B36DA9 /* GitUserInfo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,7 +45,6 @@
 		6E6C90A02C884EBD00B36DA9 /* github-client.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "github-client.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E6C90A32C884EBD00B36DA9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6E6C90A52C884EBD00B36DA9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		6E6C90A72C884EBD00B36DA9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		6E6C90AA2C884EBD00B36DA9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		6E6C90AC2C884EBF00B36DA9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6E6C90AF2C884EBF00B36DA9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -49,6 +54,15 @@
 		6E6C90C02C884EC000B36DA9 /* github-clientUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "github-clientUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E6C90C42C884EC000B36DA9 /* github_clientUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = github_clientUITests.swift; sourceTree = "<group>"; };
 		6E6C90C62C884EC000B36DA9 /* github_clientUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = github_clientUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		6E6C90DA2C885C3600B36DA9 /* HomePageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageController.swift; sourceTree = "<group>"; };
+		6E6C90E12C8885E100B36DA9 /* CategoryDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryDetailController.swift; sourceTree = "<group>"; };
+		6E6C90E32C88927800B36DA9 /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
+		6E6C90E52C8895F300B36DA9 /* github-client.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "github-client.entitlements"; sourceTree = "<group>"; };
+		6E6C90E72C889CD500B36DA9 /* PersonalPageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalPageController.swift; sourceTree = "<group>"; };
+		6E6C90EB2C88B7E300B36DA9 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
+		6E6C90EE2C88BB4F00B36DA9 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
+		6E6C90F12C88BE3F00B36DA9 /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
+		6E6C90FC2C88D2C000B36DA9 /* GitUserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitUserInfo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +93,7 @@
 		6E6C90972C884EBD00B36DA9 = {
 			isa = PBXGroup;
 			children = (
+				6E6C90EB2C88B7E300B36DA9 /* Localizable.xcstrings */,
 				6E6C90A22C884EBD00B36DA9 /* github-client */,
 				6E6C90B92C884EC000B36DA9 /* github-clientTests */,
 				6E6C90C32C884EC000B36DA9 /* github-clientUITests */,
@@ -99,9 +114,12 @@
 		6E6C90A22C884EBD00B36DA9 /* github-client */ = {
 			isa = PBXGroup;
 			children = (
+				6E6C90F32C88C45D00B36DA9 /* basic */,
+				6E6C90E62C889C9200B36DA9 /* PersonalPage */,
+				6E6C90E52C8895F300B36DA9 /* github-client.entitlements */,
+				6E6C90DC2C886CDE00B36DA9 /* HomePage */,
 				6E6C90A32C884EBD00B36DA9 /* AppDelegate.swift */,
 				6E6C90A52C884EBD00B36DA9 /* SceneDelegate.swift */,
-				6E6C90A72C884EBD00B36DA9 /* ViewController.swift */,
 				6E6C90A92C884EBD00B36DA9 /* Main.storyboard */,
 				6E6C90AC2C884EBF00B36DA9 /* Assets.xcassets */,
 				6E6C90AE2C884EBF00B36DA9 /* LaunchScreen.storyboard */,
@@ -125,6 +143,81 @@
 				6E6C90C62C884EC000B36DA9 /* github_clientUITestsLaunchTests.swift */,
 			);
 			path = "github-clientUITests";
+			sourceTree = "<group>";
+		};
+		6E6C90DC2C886CDE00B36DA9 /* HomePage */ = {
+			isa = PBXGroup;
+			children = (
+				6E6C90F82C88D27D00B36DA9 /* view */,
+				6E6C90F72C88D26B00B36DA9 /* controller */,
+				6E6C90F62C88D26000B36DA9 /* model */,
+			);
+			path = HomePage;
+			sourceTree = "<group>";
+		};
+		6E6C90E62C889C9200B36DA9 /* PersonalPage */ = {
+			isa = PBXGroup;
+			children = (
+				6E6C90FB2C88D29400B36DA9 /* model */,
+				6E6C90FA2C88D28F00B36DA9 /* view */,
+				6E6C90F92C88D28500B36DA9 /* controller */,
+			);
+			path = PersonalPage;
+			sourceTree = "<group>";
+		};
+		6E6C90F32C88C45D00B36DA9 /* basic */ = {
+			isa = PBXGroup;
+			children = (
+				6E6C90F12C88BE3F00B36DA9 /* AppConstants.swift */,
+			);
+			path = basic;
+			sourceTree = "<group>";
+		};
+		6E6C90F62C88D26000B36DA9 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				6E6C90E32C88927800B36DA9 /* Repository.swift */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		6E6C90F72C88D26B00B36DA9 /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				6E6C90DA2C885C3600B36DA9 /* HomePageController.swift */,
+				6E6C90E12C8885E100B36DA9 /* CategoryDetailController.swift */,
+			);
+			path = controller;
+			sourceTree = "<group>";
+		};
+		6E6C90F82C88D27D00B36DA9 /* view */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		6E6C90F92C88D28500B36DA9 /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				6E6C90E72C889CD500B36DA9 /* PersonalPageController.swift */,
+			);
+			path = controller;
+			sourceTree = "<group>";
+		};
+		6E6C90FA2C88D28F00B36DA9 /* view */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		6E6C90FB2C88D29400B36DA9 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				6E6C90FC2C88D2C000B36DA9 /* GitUserInfo.swift */,
+			);
+			path = model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -213,6 +306,7 @@
 			knownRegions = (
 				en,
 				Base,
+				"zh-Hans",
 			);
 			mainGroup = 6E6C90972C884EBD00B36DA9;
 			productRefGroup = 6E6C90A12C884EBD00B36DA9 /* Products */;
@@ -233,6 +327,7 @@
 			files = (
 				6E6C90AD2C884EBF00B36DA9 /* Assets.xcassets in Resources */,
 				6E6C90B02C884EBF00B36DA9 /* Base in Resources */,
+				6E6C90EC2C88B7E300B36DA9 /* Localizable.xcstrings in Resources */,
 				6E6C90AB2C884EBD00B36DA9 /* Base in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -258,9 +353,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6E6C90A82C884EBD00B36DA9 /* ViewController.swift in Sources */,
+				6E6C90E22C8885E100B36DA9 /* CategoryDetailController.swift in Sources */,
+				6E6C90DB2C885C3600B36DA9 /* HomePageController.swift in Sources */,
+				6E6C90F22C88BE3F00B36DA9 /* AppConstants.swift in Sources */,
+				6E6C90FD2C88D2C000B36DA9 /* GitUserInfo.swift in Sources */,
 				6E6C90A42C884EBD00B36DA9 /* AppDelegate.swift in Sources */,
+				6E6C90E82C889CD500B36DA9 /* PersonalPageController.swift in Sources */,
 				6E6C90A62C884EBD00B36DA9 /* SceneDelegate.swift in Sources */,
+				6E6C90E42C88927800B36DA9 /* Repository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -301,6 +401,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				6E6C90AA2C884EBD00B36DA9 /* Base */,
+				6E6C90EE2C88BB4F00B36DA9 /* zh-Hans */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -440,6 +541,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "github-client/github-client.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 4W839793S9;
@@ -450,6 +552,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -468,6 +571,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "github-client/github-client.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 4W839793S9;
@@ -478,6 +582,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

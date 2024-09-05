@@ -47,6 +47,27 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // to restore the scene back to its current state.
     }
 
+    func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>) {
+        for context in URLContexts {
+            let url = context.url
+            if url.absoluteString.contains(AppConstants.GitHost.redirectURI) {
+                // get code from github
+                if let code = url.queryParameters?["code"] {
+                    NotificationCenter.default.post(name: NSNotification.Name(rawValue: AppConstants.Local.loginSuccessNotification), object: nil, userInfo: ["code": code ])
+                }
+            }
+        }
 
+    }
+
+}
+
+extension URL {
+    var queryParameters: [String: String]? {
+        let comps = URLComponents(url: self, resolvingAgainstBaseURL: false)
+        return comps?.queryItems?.reduce(into: [String: String]()) { (result, item) in
+            result[item.name] = item.value
+        }
+    }
 }
 

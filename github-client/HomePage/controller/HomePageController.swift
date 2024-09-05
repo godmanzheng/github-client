@@ -8,11 +8,16 @@
 import Foundation
 import UIKit
 
-class HomePageController: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate {
+class HomePageController: UIViewController, 
+                UITableViewDataSource,
+                UITableViewDelegate,
+                UISearchBarDelegate {
     
     @IBOutlet var tableView: UITableView!
     var repositories:[Repository] = []
     var displayItems:[Repository] = []
+    
+    //lifecycle function
     override func viewDidLoad() {
         super.viewDidLoad()
         GithubConnector.fetchGitHubRepositories { result in
@@ -29,25 +34,6 @@ class HomePageController: UIViewController, UITableViewDataSource, UITableViewDe
         }
     }
     
-    //basic function
-    func fetchGitHubRepositories() {
-        let url = URL(string: AppConstants.GitHost.repositionUrl)!
-        URLSession.shared.dataTask(with: url) { data, response, error in
-            guard let data = data, error == nil else { return }
-            do {
-                if let repositories = try JSONSerialization.jsonObject(with: data) as? [[String: Any]] {
-                    self.repositories = repositories.compactMap(Repository.init)
-                    self.displayItems = self.repositories
-                    DispatchQueue.main.async {
-                        self.tableView.reloadData()
-                    }
-                }
-            } catch {
-                print(error)
-            }
-        }.resume()
-    }
-    
     //dataSource function
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if self.displayItems.isEmpty {
@@ -55,10 +41,9 @@ class HomePageController: UIViewController, UITableViewDataSource, UITableViewDe
         }
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        
         let repository = self.displayItems[indexPath.row]
         cell.textLabel?.text = repository.fullName
-        cell.detailTextLabel?.text = repository.description;
+        cell.detailTextLabel?.text = repository.description
         return cell
     }
     

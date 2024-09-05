@@ -11,7 +11,6 @@ import UIKit
 class CategoryDetailController: UIViewController {
     var detailInfo: Repository? = nil;
     
-    @IBOutlet weak var iconImageView: UIImageView!
     @IBOutlet var titleLabel:UILabel!;
     
     @IBOutlet weak var detailLabel: UILabel!

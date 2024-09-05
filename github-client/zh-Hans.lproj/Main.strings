@@ -1,18 +1,18 @@
 
 /* Class = "UITabBarItem"; title = "Item"; ObjectID = "0cE-99-GoP"; */
-"0cE-99-GoP.title" = "Item";
+"0cE-99-GoP.title" = "主页";
 
 /* Class = "UITabBarItem"; title = "Item 2"; ObjectID = "6Dv-Ah-h9b"; */
-"6Dv-Ah-h9b.title" = "Item 2";
+"6Dv-Ah-h9b.title" = "个人";
 
 /* Class = "UILabel"; text = "Title"; ObjectID = "8cb-Ep-UMF"; */
-"8cb-Ep-UMF.text" = "Title";
+"8cb-Ep-UMF.text" = "标题";
 
 /* Class = "UILabel"; text = "Label"; ObjectID = "UIh-gd-jq0"; */
-"UIh-gd-jq0.text" = "Label";
+"UIh-gd-jq0.text" = "说明";
 
 /* Class = "UIButton"; normalTitle = "Button"; ObjectID = "bFA-aU-sqv"; */
-"bFA-aU-sqv.normalTitle" = "Button";
+"bFA-aU-sqv.normalTitle" = "登录";
 
 /* Class = "UILabel"; text = "Subtitle"; ObjectID = "p8r-ou-Ux1"; */
-"p8r-ou-Ux1.text" = "Subtitle";
+"p8r-ou-Ux1.text" = "详细";

@@ -25,6 +25,7 @@
 		6E6C90EC2C88B7E300B36DA9 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 6E6C90EB2C88B7E300B36DA9 /* Localizable.xcstrings */; };
 		6E6C90F22C88BE3F00B36DA9 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6C90F12C88BE3F00B36DA9 /* AppConstants.swift */; };
 		6E6C90FD2C88D2C000B36DA9 /* GitUserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6C90FC2C88D2C000B36DA9 /* GitUserInfo.swift */; };
+		6EF95A742C89A5940098D376 /* URL+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF95A732C89A5940098D376 /* URL+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +70,7 @@
 		6E6C90EE2C88BB4F00B36DA9 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
 		6E6C90F12C88BE3F00B36DA9 /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
 		6E6C90FC2C88D2C000B36DA9 /* GitUserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitUserInfo.swift; sourceTree = "<group>"; };
+		6EF95A732C89A5940098D376 /* URL+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,14 +98,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		6E298C2C2C8973CF008387F5 /* viewModel */ = {
-			isa = PBXGroup;
-			children = (
-				6E298C2D2C897409008387F5 /* GithubConnector.swift */,
-			);
-			path = viewModel;
-			sourceTree = "<group>";
-		};
 		6E6C90972C884EBD00B36DA9 = {
 			isa = PBXGroup;
 			children = (
@@ -129,13 +123,12 @@
 		6E6C90A22C884EBD00B36DA9 /* github-client */ = {
 			isa = PBXGroup;
 			children = (
-				6E298C2C2C8973CF008387F5 /* viewModel */,
 				6E6C90F32C88C45D00B36DA9 /* basic */,
 				6E6C90E62C889C9200B36DA9 /* PersonalPage */,
-				6E6C90E52C8895F300B36DA9 /* github-client.entitlements */,
 				6E6C90DC2C886CDE00B36DA9 /* HomePage */,
 				6E6C90A32C884EBD00B36DA9 /* AppDelegate.swift */,
 				6E6C90A52C884EBD00B36DA9 /* SceneDelegate.swift */,
+				6E6C90E52C8895F300B36DA9 /* github-client.entitlements */,
 				6E6C90A92C884EBD00B36DA9 /* Main.storyboard */,
 				6E6C90AC2C884EBF00B36DA9 /* Assets.xcassets */,
 				6E6C90AE2C884EBF00B36DA9 /* LaunchScreen.storyboard */,
@@ -184,8 +177,10 @@
 		6E6C90F32C88C45D00B36DA9 /* basic */ = {
 			isa = PBXGroup;
 			children = (
+				6E298C2D2C897409008387F5 /* GithubConnector.swift */,
 				6E6C90F12C88BE3F00B36DA9 /* AppConstants.swift */,
 				6E298C312C89847B008387F5 /* KeychainService.swift */,
+				6EF95A732C89A5940098D376 /* URL+Extension.swift */,
 			);
 			path = basic;
 			sourceTree = "<group>";
@@ -374,6 +369,7 @@
 				6E6C90E22C8885E100B36DA9 /* CategoryDetailController.swift in Sources */,
 				6E6C90DB2C885C3600B36DA9 /* HomePageController.swift in Sources */,
 				6E6C90F22C88BE3F00B36DA9 /* AppConstants.swift in Sources */,
+				6EF95A742C89A5940098D376 /* URL+Extension.swift in Sources */,
 				6E298C2E2C897409008387F5 /* GithubConnector.swift in Sources */,
 				6E6C90FD2C88D2C000B36DA9 /* GitUserInfo.swift in Sources */,
 				6E298C322C89847B008387F5 /* KeychainService.swift in Sources */,

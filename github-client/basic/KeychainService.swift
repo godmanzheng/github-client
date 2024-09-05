@@ -20,34 +20,33 @@ class KeychainService {
         ]
         
         SecItemDelete(query as CFDictionary)
-        
         SecItemAdd(query as CFDictionary, nil)
     }
 
-func load(key: String) -> Data? {
-    let query: [String: Any] = [
-        kSecClass as String: kSecClassGenericPassword,
-        kSecAttrAccount as String: key,
-        kSecReturnData as String: kCFBooleanTrue!,
-        kSecMatchLimit as String: kSecMatchLimitOne
-    ]
-    
-    var dataTypeRef: AnyObject? = nil
-    let status = SecItemCopyMatching(query as CFDictionary, &dataTypeRef)
-    
-    if status == errSecSuccess {
-        return dataTypeRef as? Data
-    } else {
-        return nil
+    func load(key: String) -> Data? {
+        let query: [String: Any] = [
+            kSecClass as String: kSecClassGenericPassword,
+            kSecAttrAccount as String: key,
+            kSecReturnData as String: kCFBooleanTrue!,
+            kSecMatchLimit as String: kSecMatchLimitOne
+        ]
+        
+        var dataTypeRef: AnyObject? = nil
+        let status = SecItemCopyMatching(query as CFDictionary, &dataTypeRef)
+        
+        if status == errSecSuccess {
+            return dataTypeRef as? Data
+        } else {
+            return nil
+        }
     }
-}
 
-func delete(key: String) {
-    let query: [String: Any] = [
-        kSecClass as String: kSecClassGenericPassword,
-        kSecAttrAccount as String: key
-    ]
-    
-    SecItemDelete(query as CFDictionary)
-}
+    func delete(key: String) {
+        let query: [String: Any] = [
+            kSecClass as String: kSecClassGenericPassword,
+            kSecAttrAccount as String: key
+        ]
+        
+        SecItemDelete(query as CFDictionary)
+    }
 }

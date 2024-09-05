@@ -119,7 +119,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="dIh-Zd-MKG">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="dIh-Zd-MKG">
                                 <rect key="frame" x="0.0" y="135" width="428" height="770"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
@@ -168,10 +168,10 @@
                         <viewLayoutGuide key="safeArea" id="kFQ-ey-1tX"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="dIh-Zd-MKG" firstAttribute="top" secondItem="kFQ-ey-1tX" secondAttribute="top" constant="52" id="8a2-XD-2hf"/>
-                            <constraint firstItem="dIh-Zd-MKG" firstAttribute="leading" secondItem="Zd7-XY-b1G" secondAttribute="leading" id="huq-Bd-smw"/>
-                            <constraint firstAttribute="bottomMargin" secondItem="dIh-Zd-MKG" secondAttribute="bottom" constant="-62" id="mBV-j7-8Mf"/>
-                            <constraint firstAttribute="trailing" secondItem="dIh-Zd-MKG" secondAttribute="trailing" id="otb-hE-S39"/>
+                            <constraint firstItem="kFQ-ey-1tX" firstAttribute="trailing" secondItem="dIh-Zd-MKG" secondAttribute="trailing" id="UK4-vd-kOM"/>
+                            <constraint firstItem="dIh-Zd-MKG" firstAttribute="bottom" secondItem="kFQ-ey-1tX" secondAttribute="bottom" constant="62" id="cWY-fF-8i1"/>
+                            <constraint firstItem="dIh-Zd-MKG" firstAttribute="top" secondItem="kFQ-ey-1tX" secondAttribute="top" constant="44" id="gpP-h8-Xqp"/>
+                            <constraint firstItem="dIh-Zd-MKG" firstAttribute="leading" secondItem="kFQ-ey-1tX" secondAttribute="leading" id="qWP-aH-Szp"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Nkb-dn-azH"/>
@@ -209,7 +209,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="url" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NlS-Tv-LbR">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NlS-Tv-LbR">
                                 <rect key="frame" x="20" y="372" width="383" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="4rC-Bu-CUW"/>

@@ -8,6 +8,7 @@
 import Foundation
 import UIKit
 import SafariServices
+import SDWebImage
 
 class PersonalPageController: UIViewController {
 
@@ -76,14 +77,11 @@ class PersonalPageController: UIViewController {
         self.nameLabel.text = user.login;
         self.logButton.titleLabel?.text = NSLocalizedString("logout", comment: "")
         self.loggedIn = true;
-        if let url = URL(string: user.avatar_url) {
-            URLSession.shared.dataTask(with: url) { data, response, error in
-                if let data = data, let image = UIImage(data: data) {
-                    DispatchQueue.main.async {
-                        self.iconImageView.image = image
-                    }
-                }
-            }.resume()
+        
+        if let imageURL = URL(string: user.avatar_url) {
+            self.iconImageView.sd_setImage(with: imageURL, 
+                                    placeholderImage: UIImage(named: "haeder"),
+                                    context: nil)
         }
     }
 }

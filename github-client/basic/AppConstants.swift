@@ -21,6 +21,7 @@ struct AppConstants {
         static let redirectURI = "github-client://callback"
         static let userInfoURI = "https://api.github.com/user"
         static let accessTokenURI = "https://github.com/login/oauth/access_token"
+        static let searchURL = "https://api.github.com/search/repositories"
         
         //settings
         static let scope = "user, repo"

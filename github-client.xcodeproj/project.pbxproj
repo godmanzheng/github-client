@@ -27,6 +27,7 @@
 		6E6C90FD2C88D2C000B36DA9 /* GitUserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6C90FC2C88D2C000B36DA9 /* GitUserInfo.swift */; };
 		6EF95A742C89A5940098D376 /* URL+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF95A732C89A5940098D376 /* URL+Extension.swift */; };
 		6EF95A772C89A9B30098D376 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 6EF95A762C89A9B30098D376 /* SDWebImage */; };
+		6EF95A792C89DA860098D376 /* AlertHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF95A782C89DA860098D376 /* AlertHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +73,7 @@
 		6E6C90F12C88BE3F00B36DA9 /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
 		6E6C90FC2C88D2C000B36DA9 /* GitUserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitUserInfo.swift; sourceTree = "<group>"; };
 		6EF95A732C89A5940098D376 /* URL+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+Extension.swift"; sourceTree = "<group>"; };
+		6EF95A782C89DA860098D376 /* AlertHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -183,6 +185,7 @@
 				6E6C90F12C88BE3F00B36DA9 /* AppConstants.swift */,
 				6E298C312C89847B008387F5 /* KeychainService.swift */,
 				6EF95A732C89A5940098D376 /* URL+Extension.swift */,
+				6EF95A782C89DA860098D376 /* AlertHelper.swift */,
 			);
 			path = basic;
 			sourceTree = "<group>";
@@ -374,6 +377,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6EF95A792C89DA860098D376 /* AlertHelper.swift in Sources */,
 				6E6C90E22C8885E100B36DA9 /* CategoryDetailController.swift in Sources */,
 				6E6C90DB2C885C3600B36DA9 /* HomePageController.swift in Sources */,
 				6E6C90F22C88BE3F00B36DA9 /* AppConstants.swift in Sources */,

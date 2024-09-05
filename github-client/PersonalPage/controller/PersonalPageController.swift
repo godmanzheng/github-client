@@ -9,6 +9,7 @@ import Foundation
 import UIKit
 import SafariServices
 import SDWebImage
+import LocalAuthentication
 
 class PersonalPageController: UIViewController {
 
@@ -19,6 +20,7 @@ class PersonalPageController: UIViewController {
     var vc: SFSafariViewController? = nil
     var loggedIn: Bool = false
     
+    //lifecycle function
     override func viewDidLoad() {
         super.viewDidLoad()
         NotificationCenter.default.addObserver(self, 
@@ -37,6 +39,7 @@ class PersonalPageController: UIViewController {
         self.logButton.setTitle(title, for: .normal)
     }
     
+    //UI action handle
     @IBAction func clickLoginButton(button:UIButton) {
         if (!self.loggedIn) {
             let loginURL = URL(string:"\(AppConstants.GitHost.oauthURI)?client_id=\( AppConstants.GitHost.clientID)&redirect_uri=\(AppConstants.GitHost.redirectURI)&scope=\(AppConstants.GitHost.scope)")!
@@ -49,14 +52,19 @@ class PersonalPageController: UIViewController {
             print("logging out...")
             GithubConnector.logout()
             self.iconImageView.image = UIImage(named: "header")
-            self.nameLabel.text = NSLocalizedString("unlogin", comment: "")
+            self.nameLabel.text = NSLocalizedString("notLogin", comment: "")
             self.logButton .setTitle(NSLocalizedString("login", comment: ""), for: .normal)
             self.loggedIn = false;
         }
     }
-    
-    @objc func receive(noti:Notification) {
         
+    @IBAction func clickFaceIDLogin(_ sender: Any) {
+        self.authenticateUser()
+        
+    }
+    
+    //inner logic handle
+    @objc func receive(noti:Notification) {
         guard let code = noti.userInfo?["code"] as? String else {return}
         guard let safariVC = self.vc else {return}
         
@@ -65,19 +73,23 @@ class PersonalPageController: UIViewController {
             switch result {
                 case .success(let accessToken):
                     print("Access Token: \(accessToken)")
-                    GithubConnector.getUserInfo(accessToken: accessToken) {result in
-                        switch result {
-                            case .success(let user):
-                                print("User info: \(user)")
-                                DispatchQueue.main.async {
-                                    self.updateState(user: user)
-                                }
-                            case .failure(let error):
-                                print("Error fetching user info: \(error)")
-                    }
-                }
+                    self.getUserDetailInfo(accessToken: accessToken)
                 case .failure(let error):
                     print("Error fetching access token: \(error)")
+            }
+        }
+    }
+    
+    func getUserDetailInfo(accessToken: String) {
+        GithubConnector.getUserInfo(accessToken: accessToken) {result in
+            switch result {
+                case .success(let user):
+                    print("User info: \(user)")
+                    DispatchQueue.main.async {
+                        self.updateState(user: user)
+                    }
+                case .failure(let error):
+                    print("Error fetching user info: \(error)")
             }
         }
     }
@@ -88,10 +100,59 @@ class PersonalPageController: UIViewController {
         self.loggedIn = true;
         
         if let imageURL = URL(string: user.avatar_url) {
-            self.iconImageView.sd_setImage(with: imageURL, 
+            self.iconImageView.sd_setImage(with: imageURL,
                                     placeholderImage: UIImage(named: "haeder"),
                                     context: nil)
         }
     }
     
+    func authenticateUser() {
+          let context = LAContext()
+          var error: NSError?
+          
+          // check whether device support Biometrics first
+          if context.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: &error) {
+              let reason = NSLocalizedString("tipFaceIDLogin", comment: "")
+              
+              context.evaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, localizedReason: reason) { success, authenticationError in
+                  DispatchQueue.main.async {
+                      if success {
+                          self.loginWithFaceID()
+                      } else {
+                          self.alertFaceIDCheckFail()
+                      }
+                  }
+              }
+          } else {
+              self.alertFaceIDUnsupported()
+          }
+      }
+    
+    func alertFaceIDCheckFail() {
+        let confirmFailStr = NSLocalizedString("confirmFail", comment: "")
+        let confirmFailReason = NSLocalizedString("confirmFailReason", comment: "")
+        
+        AlertHelper.showConfirmAlert(title: confirmFailStr,
+                            message: confirmFailReason,
+                            presenter: self)
+    }
+    
+    func alertFaceIDUnsupported() {
+        let unavailableTitle = NSLocalizedString("FaceIDUnavailable", comment: "")
+        let unavailabelReason = NSLocalizedString("FaceIDNotSupport", comment: "")
+        AlertHelper.showConfirmAlert(title: unavailableTitle,
+                        message: unavailabelReason,
+                        presenter: self)
+    }
+    
+    func loginWithFaceID() {
+        if let data = KeychainService.shared.load(key: AppConstants.Local.keychainAccessTokenKey),
+          let accessToken = String(data: data, encoding: .utf8) {
+            self.getUserDetailInfo(accessToken: accessToken)
+        } else {
+            let title = NSLocalizedString("notLoginState", comment: "")
+            let message = NSLocalizedString("pleaseLoginFirst", comment: "")
+            AlertHelper.showConfirmAlert(title: title, message: message, presenter: self)
+        }
+    }
 }

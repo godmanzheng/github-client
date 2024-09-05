@@ -24,6 +24,39 @@ class GithubConnector {
         }.resume()
     }
     
+    static func searchRepositories(query: String, completion: @escaping (Result<[Repository], Error>) -> Void) {
+        let urlString = "https://api.github.com/search/repositories?q=\(query)"
+        guard let url = URL(string: urlString) else {
+            completion(.failure(NSError(domain: "Invalid URL", code: -1, userInfo: nil)))
+            return
+        }
+
+        var request = URLRequest(url: url)
+        request.setValue("application/vnd.github.v3+json", forHTTPHeaderField: "Accept")
+
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+         if let error = error {
+             completion(.failure(error))
+             return
+         }
+
+         guard let data = data else {
+             completion(.failure(NSError(domain: "No data", code: -1, userInfo: nil)))
+             return
+         }
+
+         do {
+             let searchResult = try JSONDecoder().decode(SearchResult.self, from: data)
+             completion(.success(searchResult.items))
+         } catch {
+             completion(.failure(error))
+         }
+     }
+
+     task.resume()
+ }
+
+    
     static func getUserAccessToken(code: String, completion: @escaping (Result<String, Error>) -> Void) {
         let url = URL(string: AppConstants.GitHost.accessTokenURI)!
         var request = URLRequest(url: url)

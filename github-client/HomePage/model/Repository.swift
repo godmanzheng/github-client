@@ -20,3 +20,8 @@ struct Repository: Decodable {
         self.url = (dictionary["url"] as? String) ?? "unknown"
     }
 }
+
+struct SearchResult: Decodable {
+    let totalCount: Int
+    let items: [Repository]
+}

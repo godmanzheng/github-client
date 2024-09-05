@@ -18,12 +18,12 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bFA-aU-sqv">
-                                <rect key="frame" x="126" y="456" width="176" height="14"/>
+                                <rect key="frame" x="126" y="446" width="176" height="34.333333333333314"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="176" id="IT3-kj-DkS"/>
+                                    <constraint firstAttribute="height" constant="34.333333333333314" id="lCp-Au-fON"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain"/>
+                                <buttonConfiguration key="configuration" style="plain" title="登录"/>
                                 <connections>
                                     <action selector="clickLoginButtonWithButton:" destination="Mo6-HV-B0z" eventType="touchUpInside" id="RYd-oh-U7c"/>
                                 </connections>
@@ -52,16 +52,31 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mYK-A6-Aoz">
+                                <rect key="frame" x="70" y="580" width="288" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="v6h-Ez-ptq"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="面容ID登录"/>
+                                <connections>
+                                    <action selector="clickFaceIDLogin:" destination="Mo6-HV-B0z" eventType="touchUpInside" id="KWB-Tp-H7W"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="hWQ-ue-VAK"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="hWQ-ue-VAK" firstAttribute="trailing" secondItem="mYK-A6-Aoz" secondAttribute="trailing" constant="70" id="26q-Fa-yhH"/>
                             <constraint firstItem="8Eg-Tq-VUv" firstAttribute="centerX" secondItem="fns-bx-dTV" secondAttribute="centerX" id="6bJ-SF-crL"/>
-                            <constraint firstItem="bFA-aU-sqv" firstAttribute="centerX" secondItem="fns-bx-dTV" secondAttribute="centerX" id="D88-XZ-N5F"/>
+                            <constraint firstItem="bFA-aU-sqv" firstAttribute="top" secondItem="Jke-bu-onT" secondAttribute="bottom" constant="99" id="DI8-MA-Fq8"/>
                             <constraint firstItem="hWQ-ue-VAK" firstAttribute="trailing" secondItem="Jke-bu-onT" secondAttribute="trailing" constant="20" id="F2r-7r-RI3"/>
                             <constraint firstItem="8Eg-Tq-VUv" firstAttribute="top" secondItem="hWQ-ue-VAK" secondAttribute="top" constant="70" id="Irg-DI-BLt"/>
-                            <constraint firstItem="bFA-aU-sqv" firstAttribute="centerY" secondItem="fns-bx-dTV" secondAttribute="centerY" id="Oy4-Bj-cwd"/>
+                            <constraint firstItem="mYK-A6-Aoz" firstAttribute="leading" secondItem="hWQ-ue-VAK" secondAttribute="leading" constant="70" id="KVB-Cy-PpH"/>
+                            <constraint firstItem="mYK-A6-Aoz" firstAttribute="top" secondItem="bFA-aU-sqv" secondAttribute="bottom" constant="99.666666666666686" id="NAl-uD-NMr"/>
+                            <constraint firstItem="bFA-aU-sqv" firstAttribute="leading" secondItem="hWQ-ue-VAK" secondAttribute="leading" constant="126" id="QM4-HK-czg"/>
                             <constraint firstItem="Jke-bu-onT" firstAttribute="leading" secondItem="hWQ-ue-VAK" secondAttribute="leading" constant="20" id="mX7-dg-4zi"/>
+                            <constraint firstItem="hWQ-ue-VAK" firstAttribute="trailing" secondItem="bFA-aU-sqv" secondAttribute="trailing" constant="126" id="mv2-yl-Fwz"/>
                             <constraint firstItem="Jke-bu-onT" firstAttribute="top" secondItem="8Eg-Tq-VUv" secondAttribute="bottom" constant="53" id="qR3-Sv-ly2"/>
                         </constraints>
                     </view>
@@ -74,7 +89,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W11-TV-xi5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="912.61682242990651" y="350.53995680345577"/>
+            <point key="canvasLocation" x="908" y="1095"/>
         </scene>
         <!--主页-->
         <scene sceneID="Crj-xt-Rfv">

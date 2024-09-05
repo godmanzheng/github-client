@@ -12,6 +12,17 @@
         }
       }
     },
+    "login" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "登录"
+          }
+        }
+      }
+    },
     "loginSuccess" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -19,6 +30,28 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "登录成功"
+          }
+        }
+      }
+    },
+    "logout" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "注销"
+          }
+        }
+      }
+    },
+    "unlogin" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "未登录"
           }
         }
       }

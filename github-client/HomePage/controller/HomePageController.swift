@@ -77,7 +77,7 @@ class HomePageController: UIViewController, UITableViewDataSource, UITableViewDe
             if let destVC = segue.destination as? CategoryDetailController {
                 let indexPath = self.tableView.indexPathForSelectedRow;
                 let repo = self.repositories[indexPath!.row];
-                destVC.detailInfo = repo.fullName;
+                destVC.detailInfo = repo;
             }
         }
     }

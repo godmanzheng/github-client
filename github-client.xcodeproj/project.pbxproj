@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		6E298C2B2C89613A008387F5 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6E298C2A2C89613A008387F5 /* Media.xcassets */; };
 		6E298C2E2C897409008387F5 /* GithubConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E298C2D2C897409008387F5 /* GithubConnector.swift */; };
+		6E298C322C89847B008387F5 /* KeychainService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E298C312C89847B008387F5 /* KeychainService.swift */; };
 		6E6C90A42C884EBD00B36DA9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6C90A32C884EBD00B36DA9 /* AppDelegate.swift */; };
 		6E6C90A62C884EBD00B36DA9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6C90A52C884EBD00B36DA9 /* SceneDelegate.swift */; };
 		6E6C90AB2C884EBD00B36DA9 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 6E6C90AA2C884EBD00B36DA9 /* Base */; };
@@ -46,6 +47,7 @@
 /* Begin PBXFileReference section */
 		6E298C2A2C89613A008387F5 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
 		6E298C2D2C897409008387F5 /* GithubConnector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubConnector.swift; sourceTree = "<group>"; };
+		6E298C312C89847B008387F5 /* KeychainService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainService.swift; sourceTree = "<group>"; };
 		6E6C90A02C884EBD00B36DA9 /* github-client.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "github-client.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E6C90A32C884EBD00B36DA9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6E6C90A52C884EBD00B36DA9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -183,6 +185,7 @@
 			isa = PBXGroup;
 			children = (
 				6E6C90F12C88BE3F00B36DA9 /* AppConstants.swift */,
+				6E298C312C89847B008387F5 /* KeychainService.swift */,
 			);
 			path = basic;
 			sourceTree = "<group>";
@@ -373,6 +376,7 @@
 				6E6C90F22C88BE3F00B36DA9 /* AppConstants.swift in Sources */,
 				6E298C2E2C897409008387F5 /* GithubConnector.swift in Sources */,
 				6E6C90FD2C88D2C000B36DA9 /* GitUserInfo.swift in Sources */,
+				6E298C322C89847B008387F5 /* KeychainService.swift in Sources */,
 				6E6C90A42C884EBD00B36DA9 /* AppDelegate.swift in Sources */,
 				6E6C90E82C889CD500B36DA9 /* PersonalPageController.swift in Sources */,
 				6E6C90A62C884EBD00B36DA9 /* SceneDelegate.swift in Sources */,

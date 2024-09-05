@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Item 2-->
+        <!--个人-->
         <scene sceneID="cbe-hl-YD1">
             <objects>
                 <viewController id="Mo6-HV-B0z" customClass="PersonalPageController" customModule="github_client" sceneMemberID="viewController">
@@ -43,7 +43,7 @@
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
                                 </userDefinedRuntimeAttributes>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Not Logged In" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jke-bu-onT">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="未登录" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jke-bu-onT">
                                 <rect key="frame" x="20" y="290" width="388" height="57"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="57" id="hFj-R4-BsB"/>
@@ -65,7 +65,7 @@
                             <constraint firstItem="Jke-bu-onT" firstAttribute="top" secondItem="8Eg-Tq-VUv" secondAttribute="bottom" constant="53" id="qR3-Sv-ly2"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 2" id="6Dv-Ah-h9b"/>
+                    <tabBarItem key="tabBarItem" title="个人" image="person.fill" catalog="system" id="6Dv-Ah-h9b"/>
                     <connections>
                         <outlet property="iconImageView" destination="8Eg-Tq-VUv" id="aXd-fm-yFC"/>
                         <outlet property="logButton" destination="bFA-aU-sqv" id="IKL-Ah-Hfd"/>
@@ -76,11 +76,11 @@
             </objects>
             <point key="canvasLocation" x="912.61682242990651" y="350.53995680345577"/>
         </scene>
-        <!--Item-->
+        <!--主页-->
         <scene sceneID="Crj-xt-Rfv">
             <objects>
                 <navigationController id="gdQ-Gk-xG8" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="0cE-99-GoP"/>
+                    <tabBarItem key="tabBarItem" title="主页" image="homekit" catalog="system" id="0cE-99-GoP"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="JVC-Ub-Lx4">
                         <rect key="frame" x="0.0" y="47" width="428" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -191,9 +191,30 @@
                         <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UIh-gd-jq0">
-                                <rect key="frame" x="31" y="353" width="377" height="100"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UIh-gd-jq0">
+                                <rect key="frame" x="26" y="117.99999999999999" width="377" height="20.333333333333329"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20.333333333333329" id="taC-bZ-QeQ"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dqh-sa-r1s">
+                                <rect key="frame" x="26" y="176" width="371" height="122"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="122" id="N3c-57-Hgw"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="url" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NlS-Tv-LbR">
+                                <rect key="frame" x="20" y="372" width="383" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="4rC-Bu-CUW"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -201,15 +222,22 @@
                         <viewLayoutGuide key="safeArea" id="7g2-9b-W0B"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="UIh-gd-jq0" firstAttribute="top" secondItem="7g2-9b-W0B" secondAttribute="top" constant="262" id="2p0-SM-tov"/>
-                            <constraint firstItem="7g2-9b-W0B" firstAttribute="bottom" secondItem="UIh-gd-jq0" secondAttribute="bottom" constant="390" id="7jf-qm-M8V"/>
-                            <constraint firstItem="UIh-gd-jq0" firstAttribute="leading" secondItem="7g2-9b-W0B" secondAttribute="leading" constant="31" id="Jz4-xO-fff"/>
-                            <constraint firstItem="UIh-gd-jq0" firstAttribute="trailing" secondItem="xT6-y0-Q64" secondAttribute="trailingMargin" id="fZt-UF-uxf"/>
+                            <constraint firstItem="dqh-sa-r1s" firstAttribute="leading" secondItem="7g2-9b-W0B" secondAttribute="leading" constant="26" id="1Ne-wV-EpU"/>
+                            <constraint firstItem="dqh-sa-r1s" firstAttribute="top" secondItem="UIh-gd-jq0" secondAttribute="bottom" constant="37.666666666666686" id="J5o-av-KL6"/>
+                            <constraint firstItem="NlS-Tv-LbR" firstAttribute="leading" secondItem="7g2-9b-W0B" secondAttribute="leading" constant="20" id="Jbt-EM-TCV"/>
+                            <constraint firstItem="UIh-gd-jq0" firstAttribute="top" secondItem="7g2-9b-W0B" secondAttribute="top" constant="27" id="K7a-LI-N2S"/>
+                            <constraint firstItem="7g2-9b-W0B" firstAttribute="trailing" secondItem="NlS-Tv-LbR" secondAttribute="trailing" constant="25" id="LER-Sn-1X9"/>
+                            <constraint firstItem="7g2-9b-W0B" firstAttribute="trailing" secondItem="dqh-sa-r1s" secondAttribute="trailing" constant="31" id="Q2D-EB-OIW"/>
+                            <constraint firstItem="UIh-gd-jq0" firstAttribute="leading" secondItem="7g2-9b-W0B" secondAttribute="leading" constant="26" id="eee-aF-L7J"/>
+                            <constraint firstItem="7g2-9b-W0B" firstAttribute="trailing" secondItem="UIh-gd-jq0" secondAttribute="trailing" constant="25" id="j3m-E9-LIV"/>
+                            <constraint firstItem="NlS-Tv-LbR" firstAttribute="top" secondItem="dqh-sa-r1s" secondAttribute="bottom" constant="74" id="xIN-0g-5sX"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="FK5-qQ-Dnd"/>
                     <connections>
-                        <outlet property="label" destination="UIh-gd-jq0" id="NZp-j3-7xX"/>
+                        <outlet property="detailLabel" destination="dqh-sa-r1s" id="MgI-eB-3oZ"/>
+                        <outlet property="titleLabel" destination="UIh-gd-jq0" id="fsF-2N-tOX"/>
+                        <outlet property="urlLabel" destination="NlS-Tv-LbR" id="JHO-2P-KVN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rbs-dj-Leb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -219,6 +247,8 @@
     </scenes>
     <resources>
         <image name="header" width="240" height="240"/>
+        <image name="homekit" catalog="system" width="128" height="104"/>
+        <image name="person.fill" catalog="system" width="128" height="120"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

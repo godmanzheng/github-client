@@ -9,11 +9,20 @@ import Foundation
 import UIKit
 
 class CategoryDetailController: UIViewController {
-    var detailInfo: String = "";
-    @IBOutlet var label:UILabel!;
+    var detailInfo: Repository? = nil;
+    
+    @IBOutlet weak var iconImageView: UIImageView!
+    @IBOutlet var titleLabel:UILabel!;
+    
+    @IBOutlet weak var detailLabel: UILabel!
+    
+    @IBOutlet weak var urlLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = UIColor.red;
-        self.label.text = self.detailInfo;
+  
+        self.titleLabel.text = self.detailInfo?.fullName
+        self.detailLabel.text = self.detailInfo?.description
+        self.urlLabel.text = self.detailInfo?.url
     }
 }

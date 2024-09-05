@@ -18,12 +18,12 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bFA-aU-sqv">
-                                <rect key="frame" x="126" y="446" width="176" height="34.333333333333314"/>
+                                <rect key="frame" x="126" y="456" width="176" height="14"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="176" id="IT3-kj-DkS"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="登录"/>
+                                <buttonConfiguration key="configuration" style="plain"/>
                                 <connections>
                                     <action selector="clickLoginButtonWithButton:" destination="Mo6-HV-B0z" eventType="touchUpInside" id="RYd-oh-U7c"/>
                                 </connections>
@@ -68,7 +68,7 @@
                     <tabBarItem key="tabBarItem" title="个人" image="person.fill" catalog="system" id="6Dv-Ah-h9b"/>
                     <connections>
                         <outlet property="iconImageView" destination="8Eg-Tq-VUv" id="aXd-fm-yFC"/>
-                        <outlet property="logButton" destination="bFA-aU-sqv" id="IKL-Ah-Hfd"/>
+                        <outlet property="logButton" destination="bFA-aU-sqv" id="QpW-Q3-ILK"/>
                         <outlet property="nameLabel" destination="Jke-bu-onT" id="531-xU-j85"/>
                     </connections>
                 </viewController>

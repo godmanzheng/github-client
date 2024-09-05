@@ -25,7 +25,16 @@ class PersonalPageController: UIViewController {
                                 selector: #selector(receive(noti:)),
                                 name: NSNotification.Name(AppConstants.Local.loginSuccessNotification),
                                 object: nil);
-        self.logButton.titleLabel?.text = NSLocalizedString("login", comment: "")
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        let title = self.loggedIn ?
+                    NSLocalizedString("logout", comment: ""):
+                    NSLocalizedString("login", comment: "")
+        
+        self.logButton.setTitle(title, for: .normal)
     }
     
     @IBAction func clickLoginButton(button:UIButton) {
@@ -37,11 +46,11 @@ class PersonalPageController: UIViewController {
             self.vc = safariVC
             
         } else {
-            
             print("logging out...")
             GithubConnector.logout()
             self.iconImageView.image = UIImage(named: "header")
             self.nameLabel.text = NSLocalizedString("unlogin", comment: "")
+            self.logButton .setTitle(NSLocalizedString("login", comment: ""), for: .normal)
             self.loggedIn = false;
         }
     }
@@ -75,7 +84,7 @@ class PersonalPageController: UIViewController {
     
     func updateState(user:GitHubUser) {
         self.nameLabel.text = user.login;
-        self.logButton.titleLabel?.text = NSLocalizedString("logout", comment: "")
+        self.logButton.setTitle(NSLocalizedString("logout", comment: ""), for: .normal)
         self.loggedIn = true;
         
         if let imageURL = URL(string: user.avatar_url) {
@@ -84,4 +93,5 @@ class PersonalPageController: UIViewController {
                                     context: nil)
         }
     }
+    
 }

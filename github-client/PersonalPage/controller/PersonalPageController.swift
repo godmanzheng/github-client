@@ -57,6 +57,6 @@ class PersonalPageController: UIViewController {
     }
     
     func updateUI(user:GitHubUser) {
-        
+        self.nameLabel.text = user.login;
     }
 }

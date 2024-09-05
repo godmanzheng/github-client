@@ -53,7 +53,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             if url.absoluteString.contains(AppConstants.GitHost.redirectURI) {
                 // get code from github
                 if let code = url.queryParameters?["code"] {
-                    NotificationCenter.default.post(name: NSNotification.Name(rawValue: AppConstants.Local.loginSuccessNotification), object: nil, userInfo: ["code": code])
+                    let notiName = NSNotification.Name(rawValue: AppConstants.Local.loginSuccessNotification);
+                    NotificationCenter.default.post(name:notiName , object: nil, userInfo: ["code": code])
                 }
             }
         }

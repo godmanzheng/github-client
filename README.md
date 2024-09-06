@@ -9,4 +9,4 @@ this application is constructed with tabbar construction, first tab of the app i
 showing repositories list and support jumping to repository detail info page,
 
 second tab of the app is personal page, demonstrate how to login with github account and 
-getting user info incluing icon, name，etc
+getting user info including icon, name，etc

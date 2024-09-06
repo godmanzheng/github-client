@@ -119,7 +119,6 @@ class GithubConnector {
                 completion(.failure(error))
             }
         }
-        
         task.resume()
     }
     
